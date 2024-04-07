@@ -219,102 +219,11 @@ namespace Presentacion
                 cbxCriterio2.Items.Add("Contiene");
             }
         }
-        public bool validarFiltro()
-        {
-            if(cbxCampo.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione un campo por favor.");
-                return true;
-            }
-            if(cbxCriterio.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione el criterio por favor.");
-                return true;
-            }
-            if(cbxCampo.SelectedItem.ToString() == "Precio")
-            {
-                if (string.IsNullOrEmpty(txtBuscarAvz.Text))
-                {
-                    MessageBox.Show("Por favor carga un valor");
-                    return true;
-                }
-                if (!(validarNumero(txtBuscarAvz.Text)))
-                {
-                    MessageBox.Show("Solo numeros por favor");
-                    return true;
-                }
-                
-            }
-            return false;
-        }
-        public bool validarFitros()
-        {
-            if (cbxCampo.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione un campo por favor.");
-                return true;
-            }
-            if (cbxCriterio.SelectedIndex < 0)
-            {
-                MessageBox.Show("Seleccione el criterio por favor.");
-                return true;
-            }
-            if (cbxCampo.SelectedItem.ToString() == "Precio")
-            {
-                if (string.IsNullOrEmpty(txtBuscarAvz.Text))
-                {
-                    MessageBox.Show("Por favor carga un valor");
-                    return true;
-                }
-                if (!(validarNumero(txtBuscarAvz.Text)))
-                {
-                    MessageBox.Show("Solo numeros por favor");
-                    return true;
-                }
-            }
-
-            if (cbxCampo2.SelectedIndex < 0)
-            {
-                MessageBox.Show("Por favor cargar el segundo campo");
-                return true;
-            }
-            if(cbxCriterio2.SelectedIndex < 0)
-            {
-                MessageBox.Show("Por favor cargar el segundo criterio");
-                return true;
-            }
-            if (cbxCampo2.SelectedItem.ToString() == "Precio")
-            {
-                if (string.IsNullOrEmpty(txtBuscarAvz2.Text))
-                {
-                    MessageBox.Show("Por favor carga un valor en el segundo buscador");
-                    return true;
-                }
-                if (!(validarNumero(txtBuscarAvz2.Text)))
-                {
-                    MessageBox.Show("Solo numeros por favor");
-                    return true;
-                }
-
-            }
-            return false;
-        }
-        public bool validarNumero(string cadena)
-        {
-            foreach (char caracter in cadena)
-            {
-                if (!(char.IsNumber(caracter)))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (boton == btnBuscar.Location.Y)
             {
-                if (validarFiltro())
+                if (helper.validarFiltro(cbxCampo, cbxCriterio, txtBuscarAvz))
                     return;
 
                 string campo = cbxCampo.SelectedItem.ToString();
@@ -325,7 +234,7 @@ namespace Presentacion
             }
             else
             {
-                if(validarFitros())
+                if (helper.validarFitros(cbxCampo, cbxCriterio, txtBuscarAvz, cbxCampo2, cbxCriterio2, txtBuscarAvz2))
                     return;
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();

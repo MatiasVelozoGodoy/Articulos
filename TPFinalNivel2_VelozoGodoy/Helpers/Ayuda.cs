@@ -72,6 +72,98 @@ namespace Helpers
                 control.MouseDown += metodo;
             }
         }
+        public bool validarFiltro(ComboBox cbxCampo, ComboBox cbxCriterio, TextBox txtBuscarAvz)
+        {
+            if (cbxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo por favor.");
+                return true;
+            }
+            if (cbxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione el criterio por favor.");
+                return true;
+            }
+            if (cbxCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtBuscarAvz.Text))
+                {
+                    MessageBox.Show("Por favor carga un valor");
+                    return true;
+                }
+                if (!(validarNumero(txtBuscarAvz.Text)))
+                {
+                    MessageBox.Show("Solo numeros por favor");
+                    return true;
+                }
+
+            }
+            return false;
+        }
+        public bool validarNumero(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public bool validarFitros(ComboBox cbxCampo, ComboBox cbxCriterio, TextBox txtBuscarAvz, ComboBox cbxCampo2, ComboBox cbxCriterio2, TextBox txtBuscarAvz2)
+        {
+            if (cbxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un campo por favor.");
+                return true;
+            }
+            if (cbxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione el criterio por favor.");
+                return true;
+            }
+            if (cbxCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtBuscarAvz.Text))
+                {
+                    MessageBox.Show("Por favor carga un valor");
+                    return true;
+                }
+                if (!(validarNumero(txtBuscarAvz.Text)))
+                {
+                    MessageBox.Show("Solo numeros por favor");
+                    return true;
+                }
+            }
+
+            if (cbxCampo2.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor cargar el segundo campo");
+                return true;
+            }
+            if (cbxCriterio2.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor cargar el segundo criterio");
+                return true;
+            }
+            if (cbxCampo2.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrEmpty(txtBuscarAvz2.Text))
+                {
+                    MessageBox.Show("Por favor carga un valor en el segundo buscador");
+                    return true;
+                }
+                if (!(validarNumero(txtBuscarAvz2.Text)))
+                {
+                    MessageBox.Show("Solo numeros por favor");
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
     }
 }
 
