@@ -77,7 +77,6 @@ namespace Presentacion
                     {
                         txtCodigo.BackColor = SystemColors.Window;
                         lblAsteriscoCodigo.Text = "✓";
-                        lblAsteriscoCodigo.BackColor = Color.Green;
                     }
                     if (txtPrecio.Text == "")
                     {
