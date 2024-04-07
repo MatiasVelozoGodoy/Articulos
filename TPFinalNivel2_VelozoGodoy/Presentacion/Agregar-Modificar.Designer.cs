@@ -121,7 +121,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(404, 60);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(210, 20);
-            this.txtCodigo.TabIndex = 6;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // txtNombre
@@ -130,7 +130,7 @@
             this.txtNombre.Location = new System.Drawing.Point(404, 90);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(210, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // txtDescripcion
@@ -138,14 +138,14 @@
             this.txtDescripcion.Location = new System.Drawing.Point(404, 120);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(210, 20);
-            this.txtDescripcion.TabIndex = 8;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // txtIMG
             // 
             this.txtIMG.Location = new System.Drawing.Point(404, 150);
             this.txtIMG.Name = "txtIMG";
             this.txtIMG.Size = new System.Drawing.Size(210, 20);
-            this.txtIMG.TabIndex = 9;
+            this.txtIMG.TabIndex = 3;
             this.txtIMG.Leave += new System.EventHandler(this.txtIMG_Leave);
             // 
             // cbxMarca
@@ -155,7 +155,7 @@
             this.cbxMarca.Location = new System.Drawing.Point(404, 180);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(210, 21);
-            this.cbxMarca.TabIndex = 10;
+            this.cbxMarca.TabIndex = 5;
             // 
             // cbxCategoria
             // 
@@ -164,7 +164,7 @@
             this.cbxCategoria.Location = new System.Drawing.Point(404, 210);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(210, 21);
-            this.cbxCategoria.TabIndex = 11;
+            this.cbxCategoria.TabIndex = 6;
             // 
             // pbxIMG
             // 
@@ -177,20 +177,22 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAceptar.Location = new System.Drawing.Point(324, 302);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(130, 46);
-            this.btnAceptar.TabIndex = 13;
+            this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelar.Location = new System.Drawing.Point(484, 302);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(130, 46);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -210,7 +212,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(404, 241);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(210, 20);
-            this.txtPrecio.TabIndex = 16;
+            this.txtPrecio.TabIndex = 7;
             this.txtPrecio.Leave += new System.EventHandler(this.txtPrecio_Leave);
             // 
             // panelCerrar
@@ -240,11 +242,12 @@
             // 
             // btnAgregarIMG
             // 
+            this.btnAgregarIMG.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAgregarIMG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarIMG.Location = new System.Drawing.Point(621, 150);
             this.btnAgregarIMG.Name = "btnAgregarIMG";
             this.btnAgregarIMG.Size = new System.Drawing.Size(25, 20);
-            this.btnAgregarIMG.TabIndex = 18;
+            this.btnAgregarIMG.TabIndex = 4;
             this.btnAgregarIMG.Text = "+";
             this.btnAgregarIMG.UseVisualStyleBackColor = true;
             this.btnAgregarIMG.Click += new System.EventHandler(this.btnAgregarIMG_Click);

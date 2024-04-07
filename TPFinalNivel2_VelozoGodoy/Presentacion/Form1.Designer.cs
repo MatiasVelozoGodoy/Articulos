@@ -30,10 +30,10 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionArticulos));
             this.dgvLector = new System.Windows.Forms.DataGridView();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -79,8 +79,8 @@ namespace Presentacion
             // 
             // dgvLector
             // 
-            dataGridViewCellStyle5.NullValue = null;
-            this.dgvLector.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.NullValue = null;
+            this.dgvLector.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLector.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLector.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -88,23 +88,23 @@ namespace Presentacion
             this.dgvLector.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLector.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
             this.dgvLector.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLector.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLector.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLector.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLector.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLector.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvLector.EnableHeadersVisualStyles = false;
             this.dgvLector.Location = new System.Drawing.Point(219, 72);
@@ -112,13 +112,14 @@ namespace Presentacion
             this.dgvLector.Name = "dgvLector";
             this.dgvLector.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgvLector.RowHeadersVisible = false;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red;
-            this.dgvLector.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            this.dgvLector.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLector.RowTemplate.ReadOnly = true;
             this.dgvLector.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvLector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLector.Size = new System.Drawing.Size(616, 373);
-            this.dgvLector.TabIndex = 0;
+            this.dgvLector.StandardTab = true;
+            this.dgvLector.TabIndex = 3;
             this.dgvLector.SelectionChanged += new System.EventHandler(this.dgvLector_SelectionChanged);
             // 
             // panelMenu
@@ -135,8 +136,8 @@ namespace Presentacion
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 580);
-            this.panelMenu.TabIndex = 8;
+            this.panelMenu.Size = new System.Drawing.Size(200, 655);
+            this.panelMenu.TabIndex = 1;
             // 
             // btnVolver
             // 
@@ -154,7 +155,7 @@ namespace Presentacion
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnVolver.Size = new System.Drawing.Size(194, 67);
-            this.btnVolver.TabIndex = 14;
+            this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "&Volver";
             this.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -178,7 +179,7 @@ namespace Presentacion
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnRestaurar.Size = new System.Drawing.Size(194, 67);
-            this.btnRestaurar.TabIndex = 13;
+            this.btnRestaurar.TabIndex = 5;
             this.btnRestaurar.Text = "&Restaurar";
             this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRestaurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -202,7 +203,7 @@ namespace Presentacion
             this.btnEliminados.Name = "btnEliminados";
             this.btnEliminados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEliminados.Size = new System.Drawing.Size(194, 67);
-            this.btnEliminados.TabIndex = 12;
+            this.btnEliminados.TabIndex = 4;
             this.btnEliminados.Text = "E&liminados";
             this.btnEliminados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -249,7 +250,7 @@ namespace Presentacion
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnDetalles.Size = new System.Drawing.Size(194, 67);
-            this.btnDetalles.TabIndex = 10;
+            this.btnDetalles.TabIndex = 3;
             this.btnDetalles.Text = "&Detalles";
             this.btnDetalles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetalles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -272,7 +273,7 @@ namespace Presentacion
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnModificar.Size = new System.Drawing.Size(194, 67);
-            this.btnModificar.TabIndex = 8;
+            this.btnModificar.TabIndex = 1;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -295,7 +296,7 @@ namespace Presentacion
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAgregar.Size = new System.Drawing.Size(194, 67);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -318,7 +319,7 @@ namespace Presentacion
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnEliminar.Size = new System.Drawing.Size(194, 67);
-            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -354,7 +355,7 @@ namespace Presentacion
             this.panelBusqueda.Location = new System.Drawing.Point(200, 495);
             this.panelBusqueda.Name = "panelBusqueda";
             this.panelBusqueda.Size = new System.Drawing.Size(872, 151);
-            this.panelBusqueda.TabIndex = 10;
+            this.panelBusqueda.TabIndex = 2;
             // 
             // btnBuscar
             // 
@@ -367,7 +368,7 @@ namespace Presentacion
             this.btnBuscar.Location = new System.Drawing.Point(753, 50);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(90, 25);
-            this.btnBuscar.TabIndex = 31;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -376,11 +377,12 @@ namespace Presentacion
             // 
             // btnMenos
             // 
+            this.btnMenos.Enabled = false;
             this.btnMenos.Image = ((System.Drawing.Image)(resources.GetObject("btnMenos.Image")));
             this.btnMenos.Location = new System.Drawing.Point(710, 75);
             this.btnMenos.Name = "btnMenos";
             this.btnMenos.Size = new System.Drawing.Size(20, 20);
-            this.btnMenos.TabIndex = 30;
+            this.btnMenos.TabIndex = 8;
             this.btnMenos.UseVisualStyleBackColor = true;
             this.btnMenos.Visible = false;
             this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
@@ -391,34 +393,37 @@ namespace Presentacion
             this.btnMas.Location = new System.Drawing.Point(710, 50);
             this.btnMas.Name = "btnMas";
             this.btnMas.Size = new System.Drawing.Size(20, 20);
-            this.btnMas.TabIndex = 29;
+            this.btnMas.TabIndex = 3;
             this.btnMas.UseVisualStyleBackColor = true;
             this.btnMas.Click += new System.EventHandler(this.btnMas_Click);
             // 
             // txtBuscarAvz2
             // 
+            this.txtBuscarAvz2.Enabled = false;
             this.txtBuscarAvz2.Location = new System.Drawing.Point(557, 97);
             this.txtBuscarAvz2.Name = "txtBuscarAvz2";
             this.txtBuscarAvz2.Size = new System.Drawing.Size(147, 20);
-            this.txtBuscarAvz2.TabIndex = 26;
+            this.txtBuscarAvz2.TabIndex = 7;
             // 
             // cbxCriterio2
             // 
             this.cbxCriterio2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCriterio2.Enabled = false;
             this.cbxCriterio2.FormattingEnabled = true;
             this.cbxCriterio2.Location = new System.Drawing.Point(324, 97);
             this.cbxCriterio2.Name = "cbxCriterio2";
             this.cbxCriterio2.Size = new System.Drawing.Size(141, 21);
-            this.cbxCriterio2.TabIndex = 25;
+            this.cbxCriterio2.TabIndex = 6;
             // 
             // cbxCampo2
             // 
             this.cbxCampo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCampo2.Enabled = false;
             this.cbxCampo2.FormattingEnabled = true;
             this.cbxCampo2.Location = new System.Drawing.Point(67, 97);
             this.cbxCampo2.Name = "cbxCampo2";
             this.cbxCampo2.Size = new System.Drawing.Size(141, 21);
-            this.cbxCampo2.TabIndex = 24;
+            this.cbxCampo2.TabIndex = 5;
             this.cbxCampo2.SelectedIndexChanged += new System.EventHandler(this.cbxCampo2_SelectedIndexChanged);
             // 
             // lblBuscarAvz2
@@ -462,7 +467,7 @@ namespace Presentacion
             this.txtBuscarAvz.Location = new System.Drawing.Point(557, 50);
             this.txtBuscarAvz.Name = "txtBuscarAvz";
             this.txtBuscarAvz.Size = new System.Drawing.Size(147, 20);
-            this.txtBuscarAvz.TabIndex = 20;
+            this.txtBuscarAvz.TabIndex = 2;
             // 
             // cbxCriterio
             // 
@@ -471,7 +476,7 @@ namespace Presentacion
             this.cbxCriterio.Location = new System.Drawing.Point(324, 50);
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(141, 21);
-            this.cbxCriterio.TabIndex = 19;
+            this.cbxCriterio.TabIndex = 1;
             // 
             // cbxCampo
             // 
@@ -480,7 +485,7 @@ namespace Presentacion
             this.cbxCampo.Location = new System.Drawing.Point(67, 50);
             this.cbxCampo.Name = "cbxCampo";
             this.cbxCampo.Size = new System.Drawing.Size(141, 21);
-            this.cbxCampo.TabIndex = 18;
+            this.cbxCampo.TabIndex = 0;
             this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
             // 
             // lblBuscarAvz
@@ -532,7 +537,7 @@ namespace Presentacion
             this.btnCerrar.Location = new System.Drawing.Point(831, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 23);
-            this.btnCerrar.TabIndex = 13;
+            this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -549,7 +554,7 @@ namespace Presentacion
             this.btnMinimizar.Location = new System.Drawing.Point(803, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(28, 23);
-            this.btnMinimizar.TabIndex = 11;
+            this.btnMinimizar.TabIndex = 3;
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
@@ -581,7 +586,7 @@ namespace Presentacion
             this.txtBuscar.Location = new System.Drawing.Point(114, 34);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(256, 20);
-            this.txtBuscar.TabIndex = 15;
+            this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // panel1
@@ -595,14 +600,14 @@ namespace Presentacion
             this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 66);
-            this.panel1.TabIndex = 16;
+            this.panel1.TabIndex = 0;
             // 
             // gestionArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1060, 580);
+            this.ClientSize = new System.Drawing.Size(1060, 655);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBusqueda);
             this.Controls.Add(this.panelMovible);

@@ -27,6 +27,7 @@ namespace Presentacion
         {
             InitializeComponent();
             Text = "Agregar";
+            this.ActiveControl = lblAsteriscoCodigo;
         }
         public Agregar_Modificar(Articulos articulo)
         {
@@ -56,7 +57,39 @@ namespace Presentacion
                 articulo.Categoria = (Categorias)cbxCategoria.SelectedItem;
                 if(txtPrecio.Text == "" || txtCodigo.Text == "" || txtNombre.Text == "")
                 {
-                    MessageBox.Show("Por favor rellene el campo");
+                    
+                    if (txtNombre.Text == "")
+                    {
+                        txtNombre.BackColor = Color.FromArgb(255, 160, 160);
+                        lblAsteriscoNombre.Text = "*";
+                    }
+                    else
+                    {
+                        txtNombre.BackColor = SystemColors.Window;
+                        lblAsteriscoNombre.Text = "✓";
+                    }
+                    if (txtCodigo.Text == "")
+                    {
+                        txtCodigo.BackColor = Color.FromArgb(255, 160, 160);
+                        lblAsteriscoCodigo.Text = "*";
+                    }
+                    else
+                    {
+                        txtCodigo.BackColor = SystemColors.Window;
+                        lblAsteriscoCodigo.Text = "✓";
+                    }
+                    if (txtPrecio.Text == "")
+                    {
+                        txtPrecio.BackColor = Color.FromArgb(255, 160, 160);
+                        lblAsteriscoPrecio.Text = "*";
+                    }
+                    else
+                    {
+                        txtPrecio.BackColor = SystemColors.Window;
+                        lblAsteriscoPrecio.Text = "✓";
+                    }
+
+                    MessageBox.Show("Por favor rellene el campo marcado");
                     return;
                 }
                 foreach (char caracter in txtPrecio.Text)
@@ -187,7 +220,7 @@ namespace Presentacion
 
         private void txtCodigo_Leave(object sender, EventArgs e)
         {
-            if(txtCodigo.Text == "")
+            if (txtCodigo.Text == "")
             {
                 txtCodigo.BackColor = Color.FromArgb(255, 160, 160);
                 lblAsteriscoCodigo.Text = "*";

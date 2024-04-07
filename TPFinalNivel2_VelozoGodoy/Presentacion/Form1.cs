@@ -52,6 +52,8 @@ namespace Presentacion
             //Para que se mueva todo el formulario
             Control[] controles = { panel1, pbxIMG, panelBusqueda, lblNombre, panelMenu };
             Ayuda.AsociarEventoMouseDown(controles, Control_MouseDown);
+
+            dgvLector.TabIndex = 0;
         }
         private ArticuloNegocio negocio = new ArticuloNegocio();
         private Ayuda helper = new Ayuda();
@@ -142,11 +144,17 @@ namespace Presentacion
             btnMenos.Visible = true;
             btnMas.Visible = false;
             btnBuscar.Location = new Point(753, 75);
+            cbxCampo2.Enabled = true;
+            cbxCriterio2.Enabled = true;
+            btnMenos.Enabled= true;
+            txtBuscarAvz2.Enabled = true;
             cbxCampo2.Items.Clear();
             cbxCampo2.Items.Add("Nombre");
             cbxCampo2.Items.Add("Marca");
             cbxCampo2.Items.Add("Categoria");
             cbxCampo2.Items.Add("Precio");
+            btnBuscar.TabIndex = 29;
+            
         }
         private void btnMenos_Click(object sender, EventArgs e)
         {
@@ -157,6 +165,11 @@ namespace Presentacion
 
             btnMas.Visible = true;
             btnMenos.Visible = false;
+            btnBuscar.TabIndex = 24;
+            cbxCampo2.Enabled = false;
+            cbxCriterio2.Enabled = false;
+            btnMenos.Enabled = false;
+            txtBuscarAvz2.Enabled = false;
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
