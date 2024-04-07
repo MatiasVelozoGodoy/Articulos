@@ -124,7 +124,7 @@ namespace Presentacion
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
             this.panelMenu.Controls.Add(this.btnVolver);
             this.panelMenu.Controls.Add(this.btnRestaurar);
             this.panelMenu.Controls.Add(this.btnEliminados);
@@ -336,7 +336,7 @@ namespace Presentacion
             // 
             // panelBusqueda
             // 
-            this.panelBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.panelBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
             this.panelBusqueda.Controls.Add(this.btnBuscar);
             this.panelBusqueda.Controls.Add(this.btnMenos);
             this.panelBusqueda.Controls.Add(this.btnMas);
@@ -571,7 +571,7 @@ namespace Presentacion
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.lblBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
             this.lblBuscar.Font = new System.Drawing.Font("OCR A Extended", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblBuscar.Location = new System.Drawing.Point(22, 31);
@@ -591,7 +591,7 @@ namespace Presentacion
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.lblBuscar);
             this.panel1.Controls.Add(this.btnMinimizar);
