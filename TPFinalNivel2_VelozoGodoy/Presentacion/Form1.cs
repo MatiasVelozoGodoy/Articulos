@@ -48,6 +48,7 @@ namespace Presentacion
             btnDetalles.MouseEnter += btn_MouseEnter;
             btnEliminados.MouseEnter += btn_MouseEnter;
             btnRestaurar.MouseEnter += btn_MouseEnter;
+            btnEliminarFisico.MouseEnter += btn_MouseEnter;
 
             //Para que se mueva todo el formulario
             Control[] controles = { panel1, pbxIMG, panelBusqueda, lblNombre, panelMenu };
@@ -91,20 +92,24 @@ namespace Presentacion
                 modificar.ShowDialog();
                 helper.mostrarLector(dgvLector, pbxIMG);
             }
+            else
+                MessageBox.Show("No hay nada seleccionado");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(dgvLector.CurrentRow != null)
+            if (dgvLector.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 DialogResult resultado = MessageBox.Show("¿Seguro que quieres eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if(resultado == DialogResult.Yes)
+                if (resultado == DialogResult.Yes)
                 {
                     negocio.eliminar(seleccionado.Id);
                 }
                 helper.mostrarLector(dgvLector, pbxIMG);
             }
+            else
+                MessageBox.Show("No hay nada seleccionado");
         }        
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
@@ -122,6 +127,8 @@ namespace Presentacion
                 Detalle detalles = new Detalle(seleccionado);
                 detalles.ShowDialog();
             }
+            else
+                MessageBox.Show("No hay nada seleccionado");
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -307,6 +314,7 @@ namespace Presentacion
             btnDetalles.Location = new Point(4, 139);
             btnEliminados.Location = new Point(4, 212);
             btnRestaurar.Location = new Point(4, 285);
+            btnEliminarFisico.Visible= true;
             helper.ocultarColumnas(dgvLector);
             this.Size = new System.Drawing.Size(1060, 452);
             panelMovible.Top = btnDetalles.Top;
@@ -360,7 +368,32 @@ namespace Presentacion
             this.Size = new System.Drawing.Size(1060, 580);
             panelMovible.Top = btnDetalles.Top;
             btnVolver.Visible = false;
+            btnEliminarFisico.Visible = false;
             btnEliminados.Visible = true;
+        }
+
+        private void btnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            if (dgvLector.CurrentRow != null)
+            {
+                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+                DialogResult resultado = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (resultado == DialogResult.Yes)
+                {
+                    negocio.eliminarDefinitivo(seleccionado.Id);
+                }
+                //helper.mostrarLector(dgvLector, pbxIMG);
+
+                dgvLector.DataSource = negocio.eliminados();
+                if (dgvLector.RowCount == 0)
+                {
+                    dgvLector.Visible = false;
+                    MessageBox.Show("No hay nada para mostrar");
+                    sinNadaEnElLector();
+                }
+            }
+            else
+                MessageBox.Show("No hay nada seleccionado");
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
@@ -359,6 +360,24 @@ namespace Negocio
             try
             {
                 data.setearConsulta("Update ARTICULOS set Codigo =  REPLACE(Codigo, '0x000' , '') where Id = @id");
+                data.limpiarParametros();
+                data.setearParametro("@id", id);
+                data.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                data.cerrarConexion();
+            }
+        }
+        public void eliminarDefinitivo(int id)
+        {
+            try
+            {
+                data.setearConsulta("Delete from ARTICULOS where Id = @id");
                 data.limpiarParametros();
                 data.setearParametro("@id", id);
                 data.ejecutarAccion();

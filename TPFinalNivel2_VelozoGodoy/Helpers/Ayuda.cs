@@ -31,7 +31,7 @@ namespace Helpers
             catch (Exception)
             {
 
-                pbxIMG.Load("https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg");
+                pbxIMG.Load("https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png");
             }
         }
         public void ocultarColumnas(DataGridView dgvLector)
