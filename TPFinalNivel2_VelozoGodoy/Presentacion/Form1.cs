@@ -11,7 +11,7 @@ using Negocio;
 using Dominio;
 using Helpers;
 using System.Runtime.InteropServices;
-
+using System.Security.Policy;
 
 namespace Presentacion
 {
@@ -71,7 +71,6 @@ namespace Presentacion
             cbxCampo.Items.Add("Marca");
             cbxCampo.Items.Add("Categoria");
             cbxCampo.Items.Add("Precio");
-            
         }
 
         private void dgvLector_SelectionChanged(object sender, EventArgs e)
@@ -382,7 +381,6 @@ namespace Presentacion
                 {
                     negocio.eliminarDefinitivo(seleccionado.Id);
                 }
-                //helper.mostrarLector(dgvLector, pbxIMG);
 
                 dgvLector.DataSource = negocio.eliminados();
                 if (dgvLector.RowCount == 0)
