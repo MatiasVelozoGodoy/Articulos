@@ -38,6 +38,7 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionArticulos));
             this.dgvLector = new System.Windows.Forms.DataGridView();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnEliminarFisico = new FontAwesome.Sharp.IconButton();
             this.btnVolver = new FontAwesome.Sharp.IconButton();
             this.btnRestaurar = new FontAwesome.Sharp.IconButton();
             this.btnEliminados = new FontAwesome.Sharp.IconButton();
@@ -70,7 +71,6 @@ namespace Presentacion
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEliminarFisico = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLector)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelNombre.SuspendLayout();
@@ -149,6 +149,30 @@ namespace Presentacion
             this.panelMenu.Size = new System.Drawing.Size(200, 655);
             this.panelMenu.TabIndex = 1;
             // 
+            // btnEliminarFisico
+            // 
+            this.btnEliminarFisico.FlatAppearance.BorderSize = 0;
+            this.btnEliminarFisico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminarFisico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarFisico.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarFisico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEliminarFisico.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminarFisico.IconColor = System.Drawing.Color.Crimson;
+            this.btnEliminarFisico.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarFisico.IconSize = 40;
+            this.btnEliminarFisico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarFisico.Location = new System.Drawing.Point(3, 358);
+            this.btnEliminarFisico.Name = "btnEliminarFisico";
+            this.btnEliminarFisico.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEliminarFisico.Size = new System.Drawing.Size(194, 67);
+            this.btnEliminarFisico.TabIndex = 7;
+            this.btnEliminarFisico.Text = "&Eliminar";
+            this.btnEliminarFisico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarFisico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminarFisico.UseVisualStyleBackColor = true;
+            this.btnEliminarFisico.Visible = false;
+            this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
+            // 
             // btnVolver
             // 
             this.btnVolver.FlatAppearance.BorderSize = 0;
@@ -165,7 +189,7 @@ namespace Presentacion
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnVolver.Size = new System.Drawing.Size(194, 67);
-            this.btnVolver.TabIndex = 6;
+            this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "&Volver";
             this.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -189,7 +213,7 @@ namespace Presentacion
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnRestaurar.Size = new System.Drawing.Size(194, 67);
-            this.btnRestaurar.TabIndex = 5;
+            this.btnRestaurar.TabIndex = 6;
             this.btnRestaurar.Text = "&Restaurar";
             this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRestaurar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -611,30 +635,6 @@ namespace Presentacion
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 66);
             this.panel1.TabIndex = 0;
-            // 
-            // btnEliminarFisico
-            // 
-            this.btnEliminarFisico.FlatAppearance.BorderSize = 0;
-            this.btnEliminarFisico.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gainsboro;
-            this.btnEliminarFisico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarFisico.Font = new System.Drawing.Font("Agency FB", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarFisico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnEliminarFisico.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminarFisico.IconColor = System.Drawing.Color.Crimson;
-            this.btnEliminarFisico.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarFisico.IconSize = 40;
-            this.btnEliminarFisico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarFisico.Location = new System.Drawing.Point(3, 358);
-            this.btnEliminarFisico.Name = "btnEliminarFisico";
-            this.btnEliminarFisico.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEliminarFisico.Size = new System.Drawing.Size(194, 67);
-            this.btnEliminarFisico.TabIndex = 12;
-            this.btnEliminarFisico.Text = "&Eliminar";
-            this.btnEliminarFisico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarFisico.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminarFisico.UseVisualStyleBackColor = true;
-            this.btnEliminarFisico.Visible = false;
-            this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
             // gestionArticulos
             // 

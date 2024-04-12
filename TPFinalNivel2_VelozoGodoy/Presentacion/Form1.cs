@@ -51,7 +51,7 @@ namespace Presentacion
             btnEliminarFisico.MouseEnter += btn_MouseEnter;
 
             //Para que se mueva todo el formulario
-            Control[] controles = { panel1, pbxIMG, panelBusqueda, lblNombre, panelMenu };
+            Control[] controles = {panel1};
             Ayuda.AsociarEventoMouseDown(controles, Control_MouseDown);
 
             dgvLector.TabIndex = 0;
