@@ -34,6 +34,9 @@ namespace Presentacion
             InitializeComponent();
             this.articulo = articulo;
             Text = "Modificar";
+            lblAsteriscoCodigo.Visible = false;
+            lblAsteriscoNombre.Visible = false;
+            lblAsteriscoPrecio.Visible = false;
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

@@ -393,5 +393,12 @@ namespace Presentacion
             else
                 MessageBox.Show("No hay nada seleccionado");
         }
+        public bool sinEliminados()
+        {
+            ArticuloNegocio eliminados = new ArticuloNegocio();
+            dgvLector.DataSource = null;
+            dgvLector.DataSource = eliminados.eliminados();
+            return false;
+        }
     }
 }

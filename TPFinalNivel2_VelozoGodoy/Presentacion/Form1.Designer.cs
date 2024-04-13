@@ -388,7 +388,7 @@ namespace Presentacion
             this.panelBusqueda.Controls.Add(this.lblCampo);
             this.panelBusqueda.Location = new System.Drawing.Point(200, 495);
             this.panelBusqueda.Name = "panelBusqueda";
-            this.panelBusqueda.Size = new System.Drawing.Size(872, 151);
+            this.panelBusqueda.Size = new System.Drawing.Size(860, 151);
             this.panelBusqueda.TabIndex = 2;
             // 
             // btnBuscar
@@ -625,7 +625,7 @@ namespace Presentacion
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(33)))), ((int)(((byte)(30)))));
             this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.lblBuscar);
             this.panel1.Controls.Add(this.btnMinimizar);
