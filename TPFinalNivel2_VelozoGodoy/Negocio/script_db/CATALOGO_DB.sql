@@ -1,4 +1,4 @@
-﻿use master
+use master
 go
 create database CATALOGO_DB
 go
