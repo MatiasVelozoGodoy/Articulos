@@ -395,7 +395,7 @@ namespace Presentacion
                 MessageBox.Show("No hay nada seleccionado");
         }
 
-        private bool sol = false;
+        private bool sol = true;
         
         private void btnModos_Click(object sender, EventArgs e)
         {
@@ -454,7 +454,6 @@ namespace Presentacion
                 btnEliminarFisico.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
                 btnRestaurar.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
                 btnVolver.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
-
                 //DatagridView
                 dgvLector.BackgroundColor = Color.FromArgb(200, 200, 200);
                 dgvLector.RowsDefaultCellStyle.BackColor = Color.FromArgb(200, 200, 200);
@@ -526,7 +525,7 @@ namespace Presentacion
                 dgvLector.RowsDefaultCellStyle.ForeColor = Color.FromArgb(220, 220, 220);
                 dgvLector.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(50, 54, 65);
                 dgvLector.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(192, 192, 0);
-                dgvLector.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 44, 51);
+                dgvLector.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 54, 65);
                 dgvLector.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(192, 192, 0);
                 dgvLector.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(41, 44, 51);
                 dgvLector.GridColor = Color.FromArgb(220, 220, 220);
