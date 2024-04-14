@@ -49,6 +49,7 @@ namespace Presentacion
             btnEliminados.MouseEnter += btn_MouseEnter;
             btnRestaurar.MouseEnter += btn_MouseEnter;
             btnEliminarFisico.MouseEnter += btn_MouseEnter;
+            btnVolver.MouseEnter += btn_MouseEnter;
 
             //Para que se mueva todo el formulario
             Control[] controles = {panel1};
@@ -394,5 +395,142 @@ namespace Presentacion
                 MessageBox.Show("No hay nada seleccionado");
         }
 
+        private bool sol = false;
+        
+        private void btnModos_Click(object sender, EventArgs e)
+        {
+
+            if (sol)
+            {
+                //esta en modo oscuro, cambiando a modo claro
+                btnModos.IconChar = FontAwesome.Sharp.IconChar.Moon;
+                btnModos.IconColor = Color.FromArgb(29, 33, 38);
+                sol = false;
+                //formulario
+                this.BackColor = Color.FromArgb(200, 200, 200);
+                //paneles
+                panel1.BackColor = Color.FromArgb(230, 230, 230);
+                panelBusqueda.BackColor = Color.FromArgb(230, 230, 230);
+                panelMenu.BackColor = Color.FromArgb(230, 230, 230);
+                panelMovible.BackColor = Color.FromArgb(154, 100, 97);
+                //labels
+                lblBuscar.BackColor = Color.FromArgb(230, 230, 230);
+                lblBuscarAvz.BackColor = Color.FromArgb(230, 230, 230);
+                lblBuscarAvz2.BackColor = Color.FromArgb(230, 230, 230);
+                lblCampo.BackColor = Color.FromArgb(230, 230, 230);
+                lblCampo2.BackColor = Color.FromArgb(230, 230, 230);
+                lblCriterio.BackColor = Color.FromArgb(230, 230, 230);
+                lblCriterio2.BackColor = Color.FromArgb(230, 230, 230);
+                lblNombre.ForeColor = Color.FromArgb(230, 230, 230);
+                lblBuscarAvz.ForeColor = Color.FromArgb(41, 44, 51);
+                lblBuscarAvz2.ForeColor = Color.FromArgb(41, 44, 51);
+                lblCampo.ForeColor = Color.FromArgb(41, 44, 51);
+                lblCampo2.ForeColor = Color.FromArgb(41, 44, 51);
+                lblCriterio.ForeColor = Color.FromArgb(41, 44, 51);
+                lblCriterio2.ForeColor = Color.FromArgb(41, 44, 51);
+                lblNombre.BackColor = Color.FromArgb(154, 100, 97);
+                lblBuscar.ForeColor = Color.FromArgb(41, 44, 51);
+                //botones
+                btnAgregar.ForeColor = Color.FromArgb(29, 33, 38);
+                btnModificar.ForeColor = Color.FromArgb(29, 33, 38);
+                btnEliminar.ForeColor = Color.FromArgb(29, 33, 38);
+                btnDetalles.ForeColor = Color.FromArgb(29, 33, 38);
+                btnRestaurar.ForeColor = Color.FromArgb(29, 33, 38);
+                btnEliminarFisico.ForeColor = Color.FromArgb(29, 33, 38);
+                btnEliminados.ForeColor = Color.FromArgb(29, 33, 38);
+                btnModificar.IconColor = Color.FromArgb(41, 44, 51);
+                btnVolver.ForeColor = Color.FromArgb(29, 33, 38);
+                btnVolver.IconColor = Color.FromArgb(143, 65, 166);
+                btnCerrar.BackColor = Color.FromArgb(41, 44, 51);
+                btnCerrar.IconColor = Color.FromArgb(200, 200, 200);
+                btnMinimizar.BackColor = Color.FromArgb(41, 44, 51);
+                btnMinimizar.IconColor = Color.FromArgb(200, 200, 200);
+                btnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnDetalles.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnEliminados.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnEliminarFisico.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnRestaurar.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+                btnVolver.FlatAppearance.MouseOverBackColor = Color.FromArgb(198, 217, 237);
+
+                //DatagridView
+                dgvLector.BackgroundColor = Color.FromArgb(200, 200, 200);
+                dgvLector.RowsDefaultCellStyle.BackColor = Color.FromArgb(200, 200, 200);
+                dgvLector.RowsDefaultCellStyle.ForeColor = Color.FromArgb(41, 44, 51);
+                dgvLector.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(220, 220, 220);
+                dgvLector.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(154, 100, 97);
+                dgvLector.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 220, 220);
+                dgvLector.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(154, 100, 97);
+                dgvLector.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(220, 220, 220);
+                dgvLector.GridColor = Color.FromArgb(41, 44, 51);
+            }
+            else
+            {
+                //esta en modo claro, cambiando a modo oscuro
+                btnModos.IconChar = FontAwesome.Sharp.IconChar.Sun;
+                btnModos.IconColor = Color.FromArgb(192, 192, 0);
+                sol = true;
+                //formulario
+                this.BackColor = Color.FromArgb(41, 44, 51);
+                //paneles
+                panel1.BackColor = Color.FromArgb(29, 33, 38);
+                panelMenu.BackColor = Color.FromArgb(29, 33, 38);
+                panelBusqueda.BackColor = Color.FromArgb(29, 33, 38);
+                panelMovible.BackColor = Color.FromArgb(192, 192, 0);
+                //labeles
+                lblBuscar.BackColor = Color.FromArgb(29, 33, 38);
+                lblBuscarAvz.BackColor = Color.FromArgb(29, 33, 38);
+                lblBuscarAvz2.BackColor = Color.FromArgb(29, 33, 38);
+                lblCampo.BackColor = Color.FromArgb(29, 33, 38);
+                lblCampo2.BackColor = Color.FromArgb(29, 33, 38);
+                lblCriterio.BackColor = Color.FromArgb(29, 33, 38);
+                lblCriterio2.BackColor = Color.FromArgb(29, 33, 38);
+                lblNombre.BackColor = Color.FromArgb(192, 192, 0);
+                lblNombre.ForeColor = Color.FromArgb(41, 44, 51);
+                lblBuscarAvz.ForeColor = Color.FromArgb(200, 200, 200);
+                lblBuscarAvz2.ForeColor = Color.FromArgb(200, 200, 200);
+                lblCampo.ForeColor = Color.FromArgb(200, 200, 200);
+                lblCampo2.ForeColor = Color.FromArgb(200, 200, 200);
+                lblCriterio.ForeColor = Color.FromArgb(200, 200, 200);
+                lblCriterio2.ForeColor = Color.FromArgb(200, 200, 200);
+                lblBuscar.ForeColor = Color.FromArgb(200, 200, 200);
+                //botones
+                btnAgregar.ForeColor = Color.FromArgb(192, 192, 0);
+                btnModificar.ForeColor = Color.FromArgb(192, 192, 0);
+                btnEliminar.ForeColor = Color.FromArgb(192, 192, 0);
+                btnDetalles.ForeColor = Color.FromArgb(192, 192, 0);
+                btnRestaurar.ForeColor = Color.FromArgb(192, 192, 0);
+                btnEliminarFisico.ForeColor = Color.FromArgb(192, 192, 0);
+                btnEliminados.ForeColor = Color.FromArgb(192, 192, 0);
+                btnModificar.IconColor = Color.FromArgb(155, 213, 240);
+                btnVolver.ForeColor = Color.FromArgb(192, 192, 0);
+                btnVolver.IconColor = Color.FromArgb(175, 238, 238);
+                btnCerrar.BackColor = Color.FromArgb(200, 200, 200);
+                btnMinimizar.BackColor = Color.FromArgb(200, 200, 200);
+                btnMinimizar.IconColor = Color.FromArgb(41, 44, 51);
+                btnCerrar.IconColor = Color.FromArgb(41, 44, 51);
+                btnAgregar.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnDetalles.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnEliminados.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnEliminar.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnEliminarFisico.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnRestaurar.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                btnVolver.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 220, 220);
+                //DatagridView
+                dgvLector.BackgroundColor = Color.FromArgb(41, 44, 51);
+                dgvLector.RowsDefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+                dgvLector.RowsDefaultCellStyle.ForeColor = Color.FromArgb(220, 220, 220);
+                dgvLector.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(50, 54, 65);
+                dgvLector.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(192, 192, 0);
+                dgvLector.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 44, 51);
+                dgvLector.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(192, 192, 0);
+                dgvLector.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(41, 44, 51);
+                dgvLector.GridColor = Color.FromArgb(220, 220, 220);
+            }
+        }
     }
 }
