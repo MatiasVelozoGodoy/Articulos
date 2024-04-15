@@ -173,12 +173,18 @@ namespace Presentacion
         {
             try
             {
-                archivo = new OpenFileDialog();
-                archivo.Filter = "jpg|*.jpg|png|*.png";
-                if(archivo.ShowDialog() == DialogResult.OK)
+                string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
+
+                if (!(Directory.Exists(carpeta)))
                 {
-                    txtIMG.Text = archivo.FileName;
-                    helper.mostrarImagen(pbxIMG, archivo.FileName);
+                    Directory.CreateDirectory(carpeta);
+                    archivo = new OpenFileDialog();
+                    archivo.Filter = "jpg|*.jpg|png|*.png";
+                    if(archivo.ShowDialog() == DialogResult.OK)
+                    {
+                        txtIMG.Text = archivo.FileName;
+                        helper.mostrarImagen(pbxIMG, archivo.FileName);
+                    }
                 }
             }
             catch (Exception ex)
@@ -189,29 +195,29 @@ namespace Presentacion
         public void borrarImagenExistente()
         {
             try
-            {
-                    if (archivo != null && !(txtIMG.Text.ToLower().Contains("http")))
-                    {
-                        string nombreDelArchivo = ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName;
-                        
-                        //pregunto si existe el archivo
-                        if (File.Exists(nombreDelArchivo))
-                        {
-                            //si existe lo elimino(ya agregado el codigo)
-                            File.Delete(ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
-                        }
-                        else
-
-                            //si no existe lo creo con el nombre original
-                            File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
-
-                    //si ya hay una imagen que se llama igual le agrego el codigo
-                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
-
-                    //primero ve si no existe el archivo y lo crea, en segunda instacia si ya existe le agrega su codigo,
-                    //y por tercero si ya existe el mismo nombre con el codigo incluido, lo borra y crea uno con el mismo nombre
+            {                
+                if (archivo != null && !(txtIMG.Text.ToLower().Contains("http")))
+                {
+                    string nombreDelArchivo = ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName;
                     
+                    //pregunto si existe el archivo
+                    if (File.Exists(nombreDelArchivo))
+                    {
+                        //si existe lo elimino(ya agregado el codigo)
+                        File.Delete(ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
                     }
+                    else
+
+                        //si no existe lo creo con el nombre original
+                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
+
+                //si ya hay una imagen que se llama igual le agrego el codigo
+                File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
+
+                //primero ve si no existe el archivo y lo crea, en segunda instacia si ya existe le agrega su codigo,
+                //y por tercero si ya existe el mismo nombre con el codigo incluido, lo borra y crea uno con el mismo nombre
+                
+                }
                 
             }
             catch (Exception ex)
