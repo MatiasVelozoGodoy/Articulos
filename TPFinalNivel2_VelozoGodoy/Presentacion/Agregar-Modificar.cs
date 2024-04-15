@@ -186,6 +186,16 @@ namespace Presentacion
                         helper.mostrarImagen(pbxIMG, archivo.FileName);
                     }
                 }
+                else
+                {
+                    archivo = new OpenFileDialog();
+                    archivo.Filter = "jpg|*.jpg|png|*.png";
+                    if (archivo.ShowDialog() == DialogResult.OK)
+                    {
+                        txtIMG.Text = archivo.FileName;
+                        helper.mostrarImagen(pbxIMG, archivo.FileName);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -198,24 +208,24 @@ namespace Presentacion
             {                
                 if (archivo != null && !(txtIMG.Text.ToLower().Contains("http")))
                 {
-                    string nombreDelArchivo = ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName;
+                    string nombreDelArchivo = ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName;
                     
                     //pregunto si existe el archivo
                     if (File.Exists(nombreDelArchivo))
                     {
-                        //si existe lo elimino(ya agregado el codigo)
-                        File.Delete(ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
+                            //si existe lo elimino
+                            File.Delete(ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);                        
+                            //lo vuelvo agregar
+                            File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
+                        
                     }
                     else
-
-                        //si no existe lo creo con el nombre original
+                    {
+                        //si no existe lo creo con el nombre original + codigo
                         File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
-
-                //si ya hay una imagen que se llama igual le agrego el codigo
-                File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
-
-                //primero ve si no existe el archivo y lo crea, en segunda instacia si ya existe le agrega su codigo,
-                //y por tercero si ya existe el mismo nombre con el codigo incluido, lo borra y crea uno con el mismo nombre
+                    }
+                    //primero se fija si ya existe el archivo con el codigo, ya existe lo borra y lo vuelve a crear
+                    //si no existe crea un archivo sin el numero de codigo
                 
                 }
                 
