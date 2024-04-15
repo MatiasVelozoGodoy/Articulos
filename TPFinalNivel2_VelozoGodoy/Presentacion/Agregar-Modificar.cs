@@ -208,24 +208,30 @@ namespace Presentacion
             {                
                 if (archivo != null && !(txtIMG.Text.ToLower().Contains("http")))
                 {
-                    string nombreDelArchivo = ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName;
-                    
+                    string nombreDelArchivo = ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName;
+                    string nombreConCodigo = ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName;
+
                     //pregunto si existe el archivo
-                    if (File.Exists(nombreDelArchivo))
+                    if (!(File.Exists(nombreDelArchivo)))
                     {
-                            //si existe lo elimino
-                            File.Delete(ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);                        
-                            //lo vuelvo agregar
-                            File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
-                        
+                        //si no existe lo creo con el nombre original + codigo
+                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);                        
+                    }
+                    else if(!(File.Exists(nombreConCodigo)))
+                    {
+                        //si ya existe uno creo uno nuevo agregandole el codigo
+                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);    
                     }
                     else
                     {
-                        //si no existe lo creo con el nombre original + codigo
-                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
+                        //    //si existe lo elimino
+                        File.Delete(ConfigurationManager.AppSettings["Articulos-App"] + articulo.Codigo + "-" + archivo.SafeFileName);
+                        //lo vuelvo agregar
+                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"]+  articulo.Codigo + "-" + archivo.SafeFileName);
                     }
-                    //primero se fija si ya existe el archivo con el codigo, ya existe lo borra y lo vuelve a crear
-                    //si no existe crea un archivo sin el numero de codigo
+                    //primero se fija si existe el archivo, si no existe lo crea
+                    //segundo se fije si ya existe el archivo, si existe le agrega su codigo
+                    //por ultimo se fija si ya existe uno con codigo, si existe lo borra y lo vuelve a crear
                 
                 }
                 

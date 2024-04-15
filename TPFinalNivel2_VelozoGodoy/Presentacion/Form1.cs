@@ -12,6 +12,9 @@ using Dominio;
 using Helpers;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
+using System.IO;
+using System.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Presentacion
 {
@@ -345,8 +348,10 @@ namespace Presentacion
                 negocio.restaurar(seleccionado.Id);
                 dgvLector.DataSource = null;
                 dgvLector.DataSource = negocio.eliminados();
+                dgvLector.Columns["Id"].Visible = false;
+                dgvLector.Columns["Codigo"].Visible = false;
+                dgvLector.Columns["UrlImagen"].Visible = false;
                 MessageBox.Show("Restaurado con exito");
-                helper.ocultarColumnas(dgvLector);
                 if (dgvLector.RowCount == 0)
                 {
                     dgvLector.Visible = false;
@@ -380,6 +385,19 @@ namespace Presentacion
                 DialogResult resultado = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (resultado == DialogResult.Yes)
                 {
+                    string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
+                    string nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
+                    string codigo = seleccionado.Codigo.Replace("0x000", "");
+                   
+                    if (File.Exists(carpeta + nombreDelArchivo))
+                    {
+                        File.Delete(carpeta + nombreDelArchivo);
+                    }
+                    else if(File.Exists(carpeta + codigo + "-" + nombreDelArchivo))
+                    {
+                        File.Delete(carpeta + codigo + "-" + nombreDelArchivo);
+                    }
+
                     negocio.eliminarDefinitivo(seleccionado.Id);
                 }
 
