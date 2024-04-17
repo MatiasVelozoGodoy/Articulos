@@ -1,1 +1,1 @@
-[![1-tp.png](https://i.postimg.cc/rwY70k0M/1-tp.png)](https://postimg.cc/dhr5pgjx)
+[![1-tp.png](https://i.postimg.cc/QtVgyFjW/1-tp.png)](https://postimg.cc/G8wsBh8c)
