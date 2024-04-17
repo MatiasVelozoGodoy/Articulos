@@ -34,6 +34,7 @@ namespace Presentacion
             InitializeComponent();
             this.articulo = articulo;
             Text = "Modificar";
+            lblAgregarModificar.Text = "Modificar";
             lblAsteriscoCodigo.Visible = false;
             lblAsteriscoNombre.Visible = false;
             lblAsteriscoPrecio.Visible = false;
@@ -99,7 +100,7 @@ namespace Presentacion
                 {
                     if (!(char.IsNumber(caracter)))
                     {
-                        MessageBox.Show("Solo numero por favor");
+                        MessageBox.Show("Solo numero por favor sin coma por favor");
                         lblAsteriscoPrecio.Text = "*";
 
                         return;

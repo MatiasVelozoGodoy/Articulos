@@ -52,6 +52,7 @@
             this.lblAsteriscoCodigo = new System.Windows.Forms.Label();
             this.lblAsteriscoNombre = new System.Windows.Forms.Label();
             this.lblAsteriscoPrecio = new System.Windows.Forms.Label();
+            this.lblAgregarModificar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).BeginInit();
             this.panelCerrar.SuspendLayout();
             this.SuspendLayout();
@@ -219,6 +220,7 @@
             // 
             this.panelCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(56)))), ((int)(((byte)(90)))));
             this.panelCerrar.Controls.Add(this.btnCerrar);
+            this.panelCerrar.Controls.Add(this.lblAgregarModificar);
             this.panelCerrar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCerrar.Location = new System.Drawing.Point(0, 0);
             this.panelCerrar.Name = "panelCerrar";
@@ -282,6 +284,17 @@
             this.lblAsteriscoPrecio.TabIndex = 23;
             this.lblAsteriscoPrecio.Text = "*";
             // 
+            // lblAgregarModificar
+            // 
+            this.lblAgregarModificar.AutoSize = true;
+            this.lblAgregarModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgregarModificar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblAgregarModificar.Location = new System.Drawing.Point(23, 9);
+            this.lblAgregarModificar.Name = "lblAgregarModificar";
+            this.lblAgregarModificar.Size = new System.Drawing.Size(59, 18);
+            this.lblAgregarModificar.TabIndex = 4;
+            this.lblAgregarModificar.Text = "Agregar";
+            // 
             // Agregar_Modificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +331,7 @@
             this.Load += new System.EventHandler(this.Agregar_Modificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();
             this.panelCerrar.ResumeLayout(false);
+            this.panelCerrar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +362,6 @@
         private System.Windows.Forms.Label lblAsteriscoCodigo;
         private System.Windows.Forms.Label lblAsteriscoNombre;
         private System.Windows.Forms.Label lblAsteriscoPrecio;
+        private System.Windows.Forms.Label lblAgregarModificar;
     }
 }
