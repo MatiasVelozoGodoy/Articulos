@@ -1,4 +1,14 @@
-Les presento mi aplicación de escritorio para el curso de Maxi Programa Nivel 2 que se trata de un formulario donde podes agregar, modificar, eliminar, busqueda rápida y busqueda avanzada (busqueda de la base de datos) donde pongo a prueba los conocimientos de dicho curso que son Windforms, POO, ADO.Net, conexiones a SQL Server, Arquitectura en capas, si lo quieren probar el script de la base de datos esta en la carpeta "Negocio"
+# Mi Aplicación de Escritorio para el Curso de Maxi Programa Nivel 2
+
+Esta aplicación de escritorio ha sido desarrollada como parte del curso de Maxi Programa Nivel 2. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una base de datos SQL Server utilizando tecnologías como WinForms, POO (Programación Orientada a Objetos), ADO.Net, y Arquitectura en Capas.
+
+## Características
+
+- **Agregar**: Permite agregar nuevos registros a la base de datos.
+- **Modificar**: Permite modificar registros existentes en la base de datos.
+- **Eliminar**: Permite eliminar registros de la base de datos.
+- **Búsqueda Rápida**: Busca registros en la base de datos de forma rápida.
+- **Búsqueda Avanzada**: Realiza búsquedas avanzadas en la base de datos.
 
 [![1-tp.png](https://i.postimg.cc/hjJx0N0L/1-tp.png)](https://postimg.cc/34Td8SVN)
 [![2-TP.png](https://i.postimg.cc/GhPDzFv5/2-TP.png)](https://postimg.cc/bsJdw2Cx)
