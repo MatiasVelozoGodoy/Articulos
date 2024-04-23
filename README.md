@@ -1,6 +1,6 @@
 # Mi Aplicación de Escritorio para el Curso de Maxi Programa Nivel 2
 
-Esta aplicación de escritorio ha sido desarrollada como parte del curso de Maxi Programa Nivel 2. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una base de datos SQL Server utilizando tecnologías como WinForms, POO (Programación Orientada a Objetos), ADO.Net, y Arquitectura en Capas.
+Esta aplicación de escritorio ha sido desarrollada como parte del curso de Maxi Programa Nivel 2. La aplicación permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una base de datos SQL Server utilizando tecnologías como WinForms, POO, ADO.Net, y Arquitectura en Capas.
 
 ## Características
 
@@ -9,6 +9,8 @@ Esta aplicación de escritorio ha sido desarrollada como parte del curso de Maxi
 - **Eliminar**: Permite eliminar registros de la base de datos.
 - **Búsqueda Rápida**: Busca registros en la base de datos de forma rápida.
 - **Búsqueda Avanzada**: Realiza búsquedas avanzadas en la base de datos.
+- **Modo Nocturno**: Es el modo estandar que esta en la aplicación, lo puedes cambiar a modo claro en cualquiero momento.
+- **Modo Claro**: Si no deseas tener el modo oscuro lo puedes cambiar por este y viceversa.
 
 [![1-tp.png](https://i.postimg.cc/hjJx0N0L/1-tp.png)](https://postimg.cc/34Td8SVN)
 [![2-TP.png](https://i.postimg.cc/GhPDzFv5/2-TP.png)](https://postimg.cc/bsJdw2Cx)
