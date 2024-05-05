@@ -48,11 +48,11 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.panelCerrar = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.lblAgregarModificar = new System.Windows.Forms.Label();
             this.btnAgregarIMG = new System.Windows.Forms.Button();
             this.lblAsteriscoCodigo = new System.Windows.Forms.Label();
             this.lblAsteriscoNombre = new System.Windows.Forms.Label();
             this.lblAsteriscoPrecio = new System.Windows.Forms.Label();
-            this.lblAgregarModificar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).BeginInit();
             this.panelCerrar.SuspendLayout();
             this.SuspendLayout();
@@ -230,6 +230,8 @@
             // btnCerrar
             // 
             this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(10)))), ((int)(((byte)(0)))));
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(0)))));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             this.btnCerrar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(205)))), ((int)(((byte)(212)))));
@@ -241,6 +243,17 @@
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblAgregarModificar
+            // 
+            this.lblAgregarModificar.AutoSize = true;
+            this.lblAgregarModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgregarModificar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblAgregarModificar.Location = new System.Drawing.Point(23, 9);
+            this.lblAgregarModificar.Name = "lblAgregarModificar";
+            this.lblAgregarModificar.Size = new System.Drawing.Size(59, 18);
+            this.lblAgregarModificar.TabIndex = 4;
+            this.lblAgregarModificar.Text = "Agregar";
             // 
             // btnAgregarIMG
             // 
@@ -283,17 +296,6 @@
             this.lblAsteriscoPrecio.Size = new System.Drawing.Size(14, 18);
             this.lblAsteriscoPrecio.TabIndex = 23;
             this.lblAsteriscoPrecio.Text = "*";
-            // 
-            // lblAgregarModificar
-            // 
-            this.lblAgregarModificar.AutoSize = true;
-            this.lblAgregarModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgregarModificar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblAgregarModificar.Location = new System.Drawing.Point(23, 9);
-            this.lblAgregarModificar.Name = "lblAgregarModificar";
-            this.lblAgregarModificar.Size = new System.Drawing.Size(59, 18);
-            this.lblAgregarModificar.TabIndex = 4;
-            this.lblAgregarModificar.Text = "Agregar";
             // 
             // Agregar_Modificar
             // 
