@@ -13,6 +13,7 @@ using Helpers;
 using System.IO;
 using System.Configuration;
 using System.Security.AccessControl;
+using System.Runtime.InteropServices;
 
 namespace Presentacion
 {
@@ -285,6 +286,16 @@ namespace Presentacion
                 txtPrecio.BackColor = SystemColors.Window;
                 lblAsteriscoPrecio.Text= "✓";
             }
+        }
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        private void panelCerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

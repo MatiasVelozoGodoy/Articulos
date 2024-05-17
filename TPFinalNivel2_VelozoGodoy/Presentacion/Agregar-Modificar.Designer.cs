@@ -226,6 +226,7 @@
             this.panelCerrar.Name = "panelCerrar";
             this.panelCerrar.Size = new System.Drawing.Size(670, 41);
             this.panelCerrar.TabIndex = 17;
+            this.panelCerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCerrar_MouseDown);
             // 
             // btnCerrar
             // 
