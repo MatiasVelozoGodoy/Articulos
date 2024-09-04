@@ -386,19 +386,33 @@ namespace Presentacion
                 if (resultado == DialogResult.Yes)
                 {
                     string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
-                    string nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
-                    string codigo = seleccionado.Codigo.Replace("0x000", "");
-                   
-                    if (File.Exists(carpeta + nombreDelArchivo))
+                    string nombreDelArchivo = string.Empty;
+                    string rutaArchivo = string.Empty;
+                    string rutaArchivoCodigo = string.Empty;
+
+                    if (!string.IsNullOrEmpty(seleccionado.UrlImagen))
                     {
-                        File.Delete(carpeta + nombreDelArchivo);
-                    }
-                    else if(File.Exists(carpeta + codigo + "-" + nombreDelArchivo))
-                    {
-                        File.Delete(carpeta + codigo + "-" + nombreDelArchivo);
+                        nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
+                        rutaArchivo = Path.Combine(carpeta, nombreDelArchivo);
+                        string codigo = seleccionado.Codigo.Replace("0x000", "");
+                        rutaArchivoCodigo = Path.Combine(carpeta, codigo + "-" + nombreDelArchivo);
+
+                        // Elimina el archivo si existe
+                        if (File.Exists(rutaArchivo))
+                        {
+                            File.Delete(rutaArchivo);
+                        }
+                        else if (File.Exists(rutaArchivoCodigo))
+                        {
+                            File.Delete(rutaArchivoCodigo);
+                        }
                     }
 
+                    // Elimina el artículo de la base de datos
                     negocio.eliminarDefinitivo(seleccionado.Id);
+
+                    // Mensaje de confirmación
+                    MessageBox.Show("Artículo eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 dgvLector.DataSource = negocio.eliminados();
