@@ -55,7 +55,7 @@ namespace Presentacion
             btnVolver.MouseEnter += btn_MouseEnter;
 
             //Para que se mueva todo el formulario
-            Control[] controles = {panel1};
+            Control[] controles = { panel1 };
             Ayuda.AsociarEventoMouseDown(controles, Control_MouseDown);
 
             dgvLector.TabIndex = 0;
@@ -65,7 +65,7 @@ namespace Presentacion
         private void Control_MouseDown(object sender, MouseEventArgs e)
         {
             helper.moverFormulario(this);
-            
+
         }
 
         private void gestionArticulos_Load(object sender, EventArgs e)
@@ -83,12 +83,12 @@ namespace Presentacion
             {
                 Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 helper.mostrarImagen(pbxIMG, seleccionado.UrlImagen);
-                }
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if(dgvLector.CurrentRow != null)
+            if (dgvLector.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 Agregar_Modificar modificar = new Agregar_Modificar(seleccionado);
@@ -113,7 +113,7 @@ namespace Presentacion
             }
             else
                 MessageBox.Show("No hay nada seleccionado");
-        }        
+        }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
@@ -124,7 +124,7 @@ namespace Presentacion
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
-            if(dgvLector.CurrentRow != null)
+            if (dgvLector.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 Detalle detalles = new Detalle(seleccionado);
@@ -136,7 +136,7 @@ namespace Presentacion
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            WindowState =  FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
 
@@ -156,7 +156,7 @@ namespace Presentacion
             btnBuscar.Location = new Point(753, 75);
             cbxCampo2.Enabled = true;
             cbxCriterio2.Enabled = true;
-            btnMenos.Enabled= true;
+            btnMenos.Enabled = true;
             txtBuscarAvz2.Enabled = true;
             cbxCampo2.Items.Clear();
             cbxCampo2.Items.Add("Nombre");
@@ -164,7 +164,7 @@ namespace Presentacion
             cbxCampo2.Items.Add("Categoria");
             cbxCampo2.Items.Add("Precio");
             btnBuscar.TabIndex = 29;
-            
+
         }
         private void btnMenos_Click(object sender, EventArgs e)
         {
@@ -199,7 +199,7 @@ namespace Presentacion
         {
             cbxCriterio.Items.Clear();
             cbxCriterio.TabIndex = 0;
-            if(cbxCampo.Text == "Precio")
+            if (cbxCampo.Text == "Precio")
             {
                 cbxCriterio.Items.Add("Mayor que");
                 cbxCriterio.Items.Add("Menor que");
@@ -238,7 +238,7 @@ namespace Presentacion
 
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
-                string filtro = txtBuscarAvz.Text;                
+                string filtro = txtBuscarAvz.Text;
                 dgvLector.DataSource = negocio.buscar(campo, criterio, filtro);
                 helper.ocultarPbxIMG(dgvLector, pbxIMG);
             }
@@ -248,7 +248,7 @@ namespace Presentacion
                     return;
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
-                string filtro = txtBuscarAvz.Text;;
+                string filtro = txtBuscarAvz.Text; ;
                 string campo2 = cbxCampo2.SelectedItem.ToString();
                 string criterio2 = cbxCriterio2.SelectedItem.ToString();
                 string filtro2 = txtBuscarAvz2.Text;
@@ -317,7 +317,7 @@ namespace Presentacion
             btnDetalles.Location = new Point(4, 139);
             btnEliminados.Location = new Point(4, 212);
             btnRestaurar.Location = new Point(4, 285);
-            btnEliminarFisico.Visible= true;
+            btnEliminarFisico.Visible = true;
             helper.ocultarColumnas(dgvLector);
             this.Size = new System.Drawing.Size(1060, 452);
             panelMovible.Top = btnDetalles.Top;
@@ -342,7 +342,7 @@ namespace Presentacion
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            if(dgvLector.CurrentRow!= null)
+            if (dgvLector.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 negocio.restaurar(seleccionado.Id);
@@ -428,7 +428,7 @@ namespace Presentacion
         }
 
         private bool sol = true;
-        
+
         private void btnModos_Click(object sender, EventArgs e)
         {
 
@@ -563,5 +563,76 @@ namespace Presentacion
                 dgvLector.GridColor = Color.FromArgb(220, 220, 220);
             }
         }
+
+        private void dgvLector_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+                if (seleccionado.Codigo.Contains("0x000"))
+                {
+                    if (dgvLector.CurrentRow != null)
+                    {
+                        DialogResult resultado = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
+                            string nombreDelArchivo = string.Empty;
+                            string rutaArchivo = string.Empty;
+                            string rutaArchivoCodigo = string.Empty;
+
+                            if (!string.IsNullOrEmpty(seleccionado.UrlImagen))
+                            {
+                                nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
+                                rutaArchivo = Path.Combine(carpeta, nombreDelArchivo);
+                                string codigo = seleccionado.Codigo.Replace("0x000", "");
+                                rutaArchivoCodigo = Path.Combine(carpeta, codigo + "-" + nombreDelArchivo);
+
+                                // Elimina el archivo si existe
+                                if (File.Exists(rutaArchivo))
+                                {
+                                    File.Delete(rutaArchivo);
+                                }
+                                else if (File.Exists(rutaArchivoCodigo))
+                                {
+                                    File.Delete(rutaArchivoCodigo);
+                                }
+                            }
+
+                            // Elimina el artículo de la base de datos
+                            negocio.eliminarDefinitivo(seleccionado.Id);
+
+                            // Mensaje de confirmación
+                            MessageBox.Show("Artículo eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        dgvLector.DataSource = negocio.eliminados();
+                        if (dgvLector.RowCount == 0)
+                        {
+                            dgvLector.Visible = false;
+                            MessageBox.Show("No hay nada para mostrar");
+                            sinNadaEnElLector();
+                        }
+                    }
+                    else
+                        MessageBox.Show("No hay nada seleccionado");
+                }
+                else if (dgvLector.CurrentRow != null)
+                {
+                    Articulos seleccionado2 = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+                    DialogResult resultado = MessageBox.Show("¿Seguro que quieres eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        negocio.eliminar(seleccionado2.Id);
+                    }
+                    helper.mostrarLector(dgvLector, pbxIMG);
+                }
+                else
+                    MessageBox.Show("No hay nada seleccionado");
+            }
+
+        }
     }
 }
+
+
