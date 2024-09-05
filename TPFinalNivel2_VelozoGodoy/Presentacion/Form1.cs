@@ -101,15 +101,11 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+
             if (dgvLector.CurrentRow != null)
             {
-                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
-                DialogResult resultado = MessageBox.Show("¿Seguro que quieres eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (resultado == DialogResult.Yes)
-                {
-                    negocio.eliminar(seleccionado.Id);
-                }
-                helper.mostrarLector(dgvLector, pbxIMG);
+                borrarLogico(seleccionado);
             }
             else
                 MessageBox.Show("No hay nada seleccionado");
@@ -379,49 +375,10 @@ namespace Presentacion
 
         private void btnEliminarFisico_Click(object sender, EventArgs e)
         {
+            Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
             if (dgvLector.CurrentRow != null)
             {
-                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
-                DialogResult resultado = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (resultado == DialogResult.Yes)
-                {
-                    string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
-                    string nombreDelArchivo = string.Empty;
-                    string rutaArchivo = string.Empty;
-                    string rutaArchivoCodigo = string.Empty;
-
-                    if (!string.IsNullOrEmpty(seleccionado.UrlImagen))
-                    {
-                        nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
-                        rutaArchivo = Path.Combine(carpeta, nombreDelArchivo);
-                        string codigo = seleccionado.Codigo.Replace("0x000", "");
-                        rutaArchivoCodigo = Path.Combine(carpeta, codigo + "-" + nombreDelArchivo);
-
-                        // Elimina el archivo si existe
-                        if (File.Exists(rutaArchivo))
-                        {
-                            File.Delete(rutaArchivo);
-                        }
-                        else if (File.Exists(rutaArchivoCodigo))
-                        {
-                            File.Delete(rutaArchivoCodigo);
-                        }
-                    }
-
-                    // Elimina el artículo de la base de datos
-                    negocio.eliminarDefinitivo(seleccionado.Id);
-
-                    // Mensaje de confirmación
-                    MessageBox.Show("Artículo eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                dgvLector.DataSource = negocio.eliminados();
-                if (dgvLector.RowCount == 0)
-                {
-                    dgvLector.Visible = false;
-                    MessageBox.Show("No hay nada para mostrar");
-                    sinNadaEnElLector();
-                }
+                borrarFisico(seleccionado);
             }
             else
                 MessageBox.Show("No hay nada seleccionado");
@@ -573,57 +530,11 @@ namespace Presentacion
                     Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                     if (seleccionado.Codigo.Contains("0x000"))
                     {
-
-                        DialogResult resultado2 = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (resultado2 == DialogResult.Yes)
-                        {
-                            string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
-                            string nombreDelArchivo = string.Empty;
-                            string rutaArchivo = string.Empty;
-                            string rutaArchivoCodigo = string.Empty;
-
-                            if (!string.IsNullOrEmpty(seleccionado.UrlImagen))
-                            {
-                                nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
-                                rutaArchivo = Path.Combine(carpeta, nombreDelArchivo);
-                                string codigo = seleccionado.Codigo.Replace("0x000", "");
-                                rutaArchivoCodigo = Path.Combine(carpeta, codigo + "-" + nombreDelArchivo);
-
-                                // Elimina el archivo si existe
-                                if (File.Exists(rutaArchivo))
-                                {
-                                    File.Delete(rutaArchivo);
-                                }
-                                else if (File.Exists(rutaArchivoCodigo))
-                                {
-                                    File.Delete(rutaArchivoCodigo);
-                                }
-                            }
-
-                            // Elimina el artículo de la base de datos
-                            negocio.eliminarDefinitivo(seleccionado.Id);
-
-                            // Mensaje de confirmación
-                            MessageBox.Show("Artículo eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
-                        dgvLector.DataSource = negocio.eliminados();
-                        if (dgvLector.RowCount == 0)
-                        {
-                            dgvLector.Visible = false;
-                            MessageBox.Show("No hay nada para mostrar");
-                            sinNadaEnElLector();
-                        }
+                        borrarFisico(seleccionado);
                     }
                     else
                     {
-                    Articulos seleccionado2 = (Articulos)dgvLector.CurrentRow.DataBoundItem;
-                    DialogResult resultado = MessageBox.Show("¿Seguro que quieres eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (resultado == DialogResult.Yes)
-                    {
-                        negocio.eliminar(seleccionado2.Id);
-                    }
-                    helper.mostrarLector(dgvLector, pbxIMG);
+                        borrarLogico(seleccionado);
                     }
 
                 }
@@ -632,7 +543,64 @@ namespace Presentacion
             }
 
         }
+        private void borrarFisico(Articulos seleccionado)
+        {
+            seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+            DialogResult resultado = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
+                string nombreDelArchivo = string.Empty;
+                string rutaArchivo = string.Empty;
+                string rutaArchivoCodigo = string.Empty;
+
+                if (!string.IsNullOrEmpty(seleccionado.UrlImagen))
+                {
+                    nombreDelArchivo = Path.GetFileName(new Uri(seleccionado.UrlImagen).LocalPath);
+                    rutaArchivo = Path.Combine(carpeta, nombreDelArchivo);
+                    string codigo = seleccionado.Codigo.Replace("0x000", "");
+                    rutaArchivoCodigo = Path.Combine(carpeta, codigo + "-" + nombreDelArchivo);
+
+                    // Elimina el archivo si existe
+                    if (File.Exists(rutaArchivo))
+                    {
+                        File.Delete(rutaArchivo);
+                    }
+                    else if (File.Exists(rutaArchivoCodigo))
+                    {
+                        File.Delete(rutaArchivoCodigo);
+                    }
+                }
+
+                // Elimina el artículo de la base de datos
+                negocio.eliminarDefinitivo(seleccionado.Id);
+
+                // Mensaje de confirmación
+                MessageBox.Show("Artículo eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            dgvLector.DataSource = negocio.eliminados();
+            if (dgvLector.RowCount == 0)
+            {
+                dgvLector.Visible = false;
+                MessageBox.Show("No hay nada para mostrar");
+                sinNadaEnElLector();
+            }
+        }
+        private void borrarLogico(Articulos seleccionado)
+        {
+            seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+            DialogResult resultado = MessageBox.Show("¿Seguro que quieres eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                negocio.eliminar(seleccionado.Id);
+            }
+            helper.mostrarLector(dgvLector, pbxIMG);
+        }
     }
 }
+    
+
+
 
 
