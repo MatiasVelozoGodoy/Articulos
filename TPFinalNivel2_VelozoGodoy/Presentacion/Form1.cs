@@ -568,13 +568,14 @@ namespace Presentacion
         {
             if (e.KeyCode == Keys.Delete)
             {
-                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
-                if (seleccionado.Codigo.Contains("0x000"))
+                if (dgvLector.CurrentRow != null)
                 {
-                    if (dgvLector.CurrentRow != null)
+                    Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+                    if (seleccionado.Codigo.Contains("0x000"))
                     {
-                        DialogResult resultado = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (resultado == DialogResult.Yes)
+
+                        DialogResult resultado2 = MessageBox.Show("¿Este articulo se eliminara de forma definitiva, desea continuar?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (resultado2 == DialogResult.Yes)
                         {
                             string carpeta = ConfigurationManager.AppSettings["Articulos-App"];
                             string nombreDelArchivo = string.Empty;
@@ -615,10 +616,7 @@ namespace Presentacion
                         }
                     }
                     else
-                        MessageBox.Show("No hay nada seleccionado");
-                }
-                else if (dgvLector.CurrentRow != null)
-                {
+                    {
                     Articulos seleccionado2 = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                     DialogResult resultado = MessageBox.Show("¿Seguro que quieres eliminar este articulo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (resultado == DialogResult.Yes)
@@ -626,6 +624,8 @@ namespace Presentacion
                         negocio.eliminar(seleccionado2.Id);
                     }
                     helper.mostrarLector(dgvLector, pbxIMG);
+                    }
+
                 }
                 else
                     MessageBox.Show("No hay nada seleccionado");
