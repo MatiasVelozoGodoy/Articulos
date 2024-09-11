@@ -101,10 +101,10 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
 
             if (dgvLector.CurrentRow != null)
             {
+                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 borrarLogico(seleccionado);
             }
             else
@@ -523,11 +523,11 @@ namespace Presentacion
 
         private void dgvLector_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
+            Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+            if (dgvLector.CurrentRow != null)
             {
-                if (dgvLector.CurrentRow != null)
+                if (e.KeyCode == Keys.Delete)
                 {
-                    Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                     if (seleccionado.Codigo.Contains("0x000"))
                     {
                         borrarFisico(seleccionado);
@@ -537,10 +537,17 @@ namespace Presentacion
                         borrarLogico(seleccionado);
                     }
 
+
                 }
-                else
-                    MessageBox.Show("No hay nada seleccionado");
+                else if (e.KeyCode == Keys.Enter)
+                {
+                    Detalle detalles = new Detalle(seleccionado);
+                    detalles.ShowDialog();
+                }
+
             }
+            else
+                MessageBox.Show("No hay nada seleccionado");
 
         }
         private void borrarFisico(Articulos seleccionado)
@@ -599,7 +606,7 @@ namespace Presentacion
         }
     }
 }
-    
+
 
 
 
