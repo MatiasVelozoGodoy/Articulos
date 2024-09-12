@@ -607,12 +607,18 @@ namespace Presentacion
 
         private void gestionArticulos_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if (e.KeyCode == Keys.F1)
+            if(!txtBuscar.Visible == false)
             {
-                Agregar_Modificar agregar = new Agregar_Modificar();
-                agregar.ShowDialog();
-            }else if (e.KeyCode == Keys.F2)
+                if (e.KeyCode == Keys.F1)
+                {
+                    Agregar_Modificar agregar = new Agregar_Modificar();
+                    agregar.ShowDialog();
+                }
+
+
+            }
+
+            if (e.KeyCode == Keys.F2)
             {
                 ArticuloNegocio eliminados = new ArticuloNegocio();
                 dgvLector.DataSource = null;
@@ -636,6 +642,14 @@ namespace Presentacion
                     sinNadaEnElLector();
                 }
             }
+            if(txtBuscar.Visible == false)
+            {
+                if (e.KeyCode == Keys.Back)
+                {
+                    sinNadaEnElLector();
+                }
+            }
+            
 
 
         }
