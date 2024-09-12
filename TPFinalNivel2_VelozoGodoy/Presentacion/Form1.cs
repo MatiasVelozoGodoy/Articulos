@@ -614,6 +614,18 @@ namespace Presentacion
                     Agregar_Modificar agregar = new Agregar_Modificar();
                     agregar.ShowDialog();
                 }
+                else if (e.KeyCode == Keys.F5)
+                {
+                    if (dgvLector.CurrentRow != null)
+                    {
+                        Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+                        Agregar_Modificar modificar = new Agregar_Modificar(seleccionado);
+                        modificar.ShowDialog();
+                        helper.mostrarLector(dgvLector, pbxIMG);
+                    }
+                    else
+                        MessageBox.Show("No hay nada seleccionado");
+                }
 
 
             }
@@ -642,11 +654,33 @@ namespace Presentacion
                     sinNadaEnElLector();
                 }
             }
+            
             if(txtBuscar.Visible == false)
             {
                 if (e.KeyCode == Keys.Back)
                 {
                     sinNadaEnElLector();
+                }
+                if (e.KeyCode == Keys.F5)
+                {
+                    ArticuloNegocio negocio = new ArticuloNegocio();
+                    if (dgvLector.CurrentRow != null)
+                    {
+                        Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
+                        negocio.restaurar(seleccionado.Id);
+                        dgvLector.DataSource = null;
+                        dgvLector.DataSource = negocio.eliminados();
+                        dgvLector.Columns["Id"].Visible = false;
+                        dgvLector.Columns["Codigo"].Visible = false;
+                        dgvLector.Columns["UrlImagen"].Visible = false;
+                        MessageBox.Show("Restaurado con exito");
+                        if (dgvLector.RowCount == 0)
+                        {
+                            dgvLector.Visible = false;
+                            MessageBox.Show("No hay nada para mostrar");
+                            sinNadaEnElLector();
+                        }
+                    }
                 }
             }
             
