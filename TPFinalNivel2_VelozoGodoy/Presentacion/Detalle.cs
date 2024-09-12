@@ -67,5 +67,13 @@ namespace Presentacion
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void Detalle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) 
+            {
+                Close();
+            }
+        }
     }
 }

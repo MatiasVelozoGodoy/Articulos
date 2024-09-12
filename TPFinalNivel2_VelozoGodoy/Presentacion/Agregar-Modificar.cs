@@ -297,5 +297,25 @@ namespace Presentacion
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void Agregar_Modificar_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if(e.KeyCode == Keys.Escape && articulo == null)
+            {
+                if(txtCodigo.Text != "" || txtDescripcion.Text != "" || txtIMG.Text != "" || txtNombre.Text != "" || txtPrecio.Text != "")
+                {
+                    DialogResult resultado = MessageBox.Show("Algunos campos estan rellenos, ¿seguro que quieres cerrar?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.OK) 
+                    {
+                        Close();
+                    }
+                }
+                else
+                {
+                    Close();
+                }
+            }
+        }
     }
 }

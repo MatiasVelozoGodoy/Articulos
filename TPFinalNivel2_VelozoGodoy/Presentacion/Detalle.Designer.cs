@@ -319,10 +319,12 @@
             this.Controls.Add(this.pbxIMG);
             this.Controls.Add(this.panelDetalles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Detalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle";
             this.Load += new System.EventHandler(this.Detalle_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Detalle_KeyDown);
             this.panelDetalles.ResumeLayout(false);
             this.panelDetalles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();

@@ -328,10 +328,12 @@
             this.Controls.Add(this.lblCodigo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Agregar_Modificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar_Modificar";
             this.Load += new System.EventHandler(this.Agregar_Modificar_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Agregar_Modificar_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbxIMG)).EndInit();
             this.panelCerrar.ResumeLayout(false);
             this.panelCerrar.PerformLayout();
