@@ -612,6 +612,29 @@ namespace Presentacion
             {
                 Agregar_Modificar agregar = new Agregar_Modificar();
                 agregar.ShowDialog();
+            }else if (e.KeyCode == Keys.F2)
+            {
+                ArticuloNegocio eliminados = new ArticuloNegocio();
+                dgvLector.DataSource = null;
+                dgvLector.DataSource = eliminados.eliminados();
+                ocultarEnEliminados();
+                btnRestaurar.Visible = true;
+                btnDetalles.Location = new Point(4, 139);
+                btnEliminados.Location = new Point(4, 212);
+                btnRestaurar.Location = new Point(4, 285);
+                btnEliminarFisico.Visible = true;
+                helper.ocultarColumnas(dgvLector);
+                this.Size = new System.Drawing.Size(1060, 452);
+                panelMovible.Top = btnDetalles.Top;
+                btnVolver.Visible = true;
+                btnEliminados.Visible = false;
+                helper.ocultarPbxIMG(dgvLector, pbxIMG);
+                if (dgvLector.RowCount == 0)
+                {
+                    dgvLector.Visible = false;
+                    MessageBox.Show("No hay nada para mostrar");
+                    sinNadaEnElLector();
+                }
             }
 
 
