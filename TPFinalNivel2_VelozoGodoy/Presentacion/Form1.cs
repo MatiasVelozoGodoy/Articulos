@@ -30,8 +30,7 @@ namespace Presentacion
 
         private void btn_MouseEnter(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            moverPanel(btn, panelMovible);
+
         }
         public gestionArticulos()
         {
@@ -607,7 +606,7 @@ namespace Presentacion
 
         private void gestionArticulos_KeyDown(object sender, KeyEventArgs e)
         {
-            if(!txtBuscar.Visible == false)
+            if (!txtBuscar.Visible == false)
             {
                 if (e.KeyCode == Keys.F1)
                 {
@@ -654,8 +653,8 @@ namespace Presentacion
                     sinNadaEnElLector();
                 }
             }
-            
-            if(txtBuscar.Visible == false)
+
+            if (txtBuscar.Visible == false)
             {
                 if (e.KeyCode == Keys.Back)
                 {
@@ -683,9 +682,12 @@ namespace Presentacion
                     }
                 }
             }
-            
+        }
 
-
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnAgregar, "F1");
         }
     }
 }
