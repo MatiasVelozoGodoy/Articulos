@@ -683,12 +683,55 @@ namespace Presentacion
                 }
             }
         }
-
+        #region tooltips
         private void btnAgregar_MouseEnter(object sender, EventArgs e)
         {
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btnAgregar, "F1");
         }
+
+        private void btnEliminar_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnEliminar, "DEL");
+        }
+
+        private void btnEliminados_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnEliminados, "F2");
+        }
+
+        private void btnEliminarFisico_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnEliminarFisico, "Suprimir");
+        }
+
+        private void btnRestaurar_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnRestaurar, "F5");
+        }
+
+        private void btnVolver_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnVolver, "Back");
+        }
+
+        private void btnModificar_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnModificar, "F5");
+        }
+        private void btnDetalles_MouseEnter(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnDetalles, "Enter");
+        }
+        #endregion
+
     }
 }
 
