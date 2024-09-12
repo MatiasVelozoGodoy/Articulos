@@ -523,9 +523,9 @@ namespace Presentacion
 
         private void dgvLector_KeyDown(object sender, KeyEventArgs e)
         {
-            Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
             if (dgvLector.CurrentRow != null)
             {
+                Articulos seleccionado = (Articulos)dgvLector.CurrentRow.DataBoundItem;
                 if (e.KeyCode == Keys.Delete)
                 {
                     if (seleccionado.Codigo.Contains("0x000"))
@@ -546,7 +546,7 @@ namespace Presentacion
                 }
 
             }
-            else
+            else if (!dgvLector.Focused)
                 MessageBox.Show("No hay nada seleccionado");
 
         }
@@ -603,6 +603,18 @@ namespace Presentacion
                 negocio.eliminar(seleccionado.Id);
             }
             helper.mostrarLector(dgvLector, pbxIMG);
+        }
+
+        private void gestionArticulos_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.F1)
+            {
+                Agregar_Modificar agregar = new Agregar_Modificar();
+                agregar.ShowDialog();
+            }
+
+
         }
     }
 }
