@@ -13,7 +13,7 @@ Esta aplicación de escritorio ha sido desarrollada como parte del curso de Maxi
 - **Modo Claro**: Si no deseas tener el modo oscuro lo puedes cambiar por este y viceversa.
 
 [![1-tp.png](https://i.postimg.cc/zXnvF0st/1-tp.png)](https://postimg.cc/MvpzWbKV)
-[![2-TP.png](https://i.postimg.cc/0NHyy3SQ/2-TP.png)](https://postimg.cc/d7rYW54P)
+[2-TP.png](https://postimg.cc/d7rYW54P)
 [![3-TP.png](https://i.postimg.cc/FRMFjLDX/3-TP.png)](https://postimg.cc/DJcKhm9x)
 [![4-TP.png](https://i.postimg.cc/ry4wqfwV/4-TP.png)](https://postimg.cc/F194ZgS8)
 [![5-TP.png](https://i.postimg.cc/J4W40jsb/5-TP.png)](https://postimg.cc/xqtSFJyC)
