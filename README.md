@@ -18,4 +18,3 @@ Esta aplicación de escritorio ha sido desarrollada como parte del curso de Maxi
 Aca agregandole distintos modos que se pueden alternar haciendole click al boton
 [![6-TP.png](https://i.postimg.cc/7YMP2bzj/6-TP.png)](https://postimg.cc/hfvqFDp0)
 [![7-TP.png](https://i.postimg.cc/T3ddqGq1/7-TP.png)](https://postimg.cc/hfYRckYR)
-![6-TP](https://github.com/user-attachments/assets/7594339d-cdba-49aa-9e82-2925f1015e0f)
